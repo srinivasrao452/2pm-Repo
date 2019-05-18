@@ -1,0 +1,170 @@
+Form With Adv Features
+======================
+<label> and <input>
+-------------------
+<label> tag is used to give prompting to user for which kind of data is required like name,location,email...
+
+<input> tag is used to display an empty box so that user can enter the data.
+
+if we dont specify <label> tag then we should add placeholder attribute inside the <input> tag.
+
+like gmail.com and facebook.com follow placeholder, not <label>
+
+<select>
+--------
+<select> tag is used to  display multiple items with the help <option> tag.
+generally <select> is used to display dropdown list of items, so we can select any specific item from out of all items.
+
+if we want to select multiple items then we add "multiple" property in the opening tag of <select> like below 
+
+<select multiple>
+
+<option>
+--------
+<option> is used to create a specific item in the <select> tag.
+
+<mark>
+------
+<mark> tag is used to display yellow color background for specific content.
+
+ 
+<fieldset>
+----------
+<fieldset> tag is used to display a sub-form to take a special kind of data which is different from the main form data.
+
+<legend>
+--------
+<legend> tag is used to display the title on the border of the sub-form
+
+
+maxlength
+---------
+It is used specify the maximum number of characters in the input box
+
+maxlength="20" 
+It allows only 20 characters in the input box 
+
+size
+----
+It specifies the length of input box, that means it changes the width of input box.
+
+size="50"
+the length of input box is 50 characters. but input box allows more then 50 characters also.
+
+placeholder
+----------
+it gives the prompting to user, it will be written in the input box.
+
+
+value:
+------ 
+If we want to display any default value in the input box then we use value attribute.
+
+readonly     property
+-----------------
+if we want to make any specific value as a default value for everyone, then we can set readonly property in the input box.
+
+that value cant be modified.
+
+this property is used  for the fields which is common data for all people.
+
+
+autofocus
+=========
+The autofocus attribute specifies that the input field should automatically get focus when the page loads
+
+autocomplete
+-------------
+it will display the previous data of specific input box, 
+if we dont want to display previous data then we set autocomplete="off" in the input tag.
+
+
+novalidate   property
+-----------------
+if we dont want to perform any kind of validations on the form then we use novalidate property in the beginning <form> tag.
+
+checkbox
+========
+<input type="checkbox"  name="ploc" value="hyd">Hyderabad<br>
+
+if user selects Hyderabad then  the value(hyd) of value attribute will store in the value(ploc) of name attribute.
+
+later we use the value(ploc) of name attribute to map the database table columns to store the user data in the table. 
+
+<datalist>
+----------
+<datalist> is used to implement a predefined autocomplete feature with required values.
+
+we create one attribute named  as"list"  with  some_value   in the <input> tag 
+we create another attribute named as  "id"  with  some_value  in the <datalist> tag,
+
+here, the condition is, the values of both list and id attributes "must be same". then only the items of datalist tag will display whenever we click on input box.
+
+=======================          ====================          ====================
+Q ) Write a program to create a Contact Form with  some addvance attributes ? 
+
+<html>
+<head>
+  <title>Adv Features Form</title>
+</head>
+
+<body>
+<form novalidate>
+     <h3>Contact Form</h3>
+
+  <label>Name: </label>
+  <input type="text" name="ename" maxlength="10"  size="20" value="Srinivas" readonly><br><br>
+
+  <label>Email: </label>
+  <input type="email" name="email" autofocus><br><br>
+
+  <label>Joining Date:</label>
+  <input type="date" name="jdata"><br><br>
+
+  <label>Login Time:</label>
+  <input type="time" name="ltime"><br><br>
+
+  <label>Birth Date and Time:</label>
+  <input type="datetime-local" name="bdatetime"><br><br>
+
+  <label>Select Gender:</label><br>
+  <input type="radio" name="gender" value="male">Male<br>
+  <input type="radio" name="gender" value="female">Female <br><br>
+
+  <label>Select Your <mark>Company:</mark></label>
+  <select name="company">
+    <option value="tcs">TCS</option>
+    <option value="wipro">Wipro</option>
+    <option value="cts">CTS</option>
+    <option value="info">Infosys</option>
+  </select><br><br>
+
+  <label>Select Preffered <mark>Locations:</mark></label><br>
+  <input type="checkbox"  name="ploc" value="hyd">Hyderabad<br>
+  <input type="checkbox"  name="ploc" value="bang">Bangalore<br>
+  <input type="checkbox"  name="ploc" value="che">Chennai<br>
+  <input type="checkbox"  name="ploc" value="pune">Pune<br><br>
+
+  <label>Enter Qualification:</label>
+  <input list="qual">
+  <datalist id="qual">
+    <option>Btech</option>
+    <option>BE</option>
+  </datalist><br><br>
+
+  <label>Upload Your Resume:</label>
+  <input type="file" name="resume"><br><br>
+
+  <fieldset>
+    <legend>Personal Info</legend>
+    Name: &nbsp; <input type="text"><br><br>
+    Mobile:<input type="number"><br><br>
+    Father: <input type="text"><br>
+  </fieldset><br>
+
+  <input type="submit" value="Send">
+  <input type="reset" value="Clear">
+
+</form>
+</body>
+</html>
